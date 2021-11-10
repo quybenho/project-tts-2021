@@ -15,6 +15,7 @@ import java.util.Map;
 
 public class MasterService {
 
+
 	protected static DataSource dataSource;
 
 	public void setDataSource(DataSource dataSource) {
@@ -77,5 +78,4 @@ public class MasterService {
 
 		return queryDataList;
 	}
-
 }
