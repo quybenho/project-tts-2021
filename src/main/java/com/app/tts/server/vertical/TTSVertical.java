@@ -115,7 +115,7 @@ public class TTSVertical extends AbstractVerticle implements LoggerInterface {
 
 		httpServer.listen(result -> {
 			if (result.failed()) {
-				logger.error("[INIT] START TTS API ERROR " + result.cause());
+				logger.info("[INIT] START TTS API ERROR " + result.cause());
 			} else {
 				logger.info("[INIT] TTS SERVER STARTED AT " + StringPool.SPACE + serverHost + StringPool.COLON + serverPort);
 			}

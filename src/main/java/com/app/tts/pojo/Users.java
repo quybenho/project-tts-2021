@@ -15,23 +15,23 @@ import lombok.Setter;
 @Setter
 public class Users {
 
-	private String id;
-	private String email;
-	private String password;
-	private String avatar;
-
-	public static Users fromMap(Map input) {
-		Users obj = new Users();
-		obj.setId(ParamUtil.getString(input, AppParams.S_ID));
-		obj.setPassword(ParamUtil.getString(input, AppParams.S_PASSWORD));
-		obj.setEmail(ParamUtil.getString(input, AppParams.S_EMAIL));
-		obj.setAvatar(ParamUtil.getString(input, AppParams.S_AVATAR));
-		return obj;
-	}
-
-	@Override
-	public String toString() {
-		return "UserObj [id = " + id + ",email = " + email + ",avatar = " + avatar + "]";
-	}
+//	private String id;
+//	private String email;
+//	private String password;
+//	private String avatar;
+//
+//	public static Users fromMap(Map input) {
+//		Users obj = new Users();
+//		obj.setId(ParamUtil.getString(input, AppParams.S_ID));
+//		obj.setPassword(ParamUtil.getString(input, AppParams.S_PASSWORD));
+//		obj.setEmail(ParamUtil.getString(input, AppParams.S_EMAIL));
+//		obj.setAvatar(ParamUtil.getString(input, AppParams.S_AVATAR));
+//		return obj;
+//	}
+//
+//	@Override
+//	public String toString() {
+//		return "UserObj [id = " + id + ",email = " + email + ",avatar = " + avatar + "]";
+//	}
 
 }

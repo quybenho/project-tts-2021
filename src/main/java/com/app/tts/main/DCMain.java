@@ -5,7 +5,8 @@
  */
 package com.app.tts.main;
 
-import org.apache.commons.validator.routines.EmailValidator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,14 +14,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  * @author hungdt
  */
+@SpringBootApplication
 public class DCMain {
 
-	public static ApplicationContext appContext;
-
-	public DCMain() {
-	}
-
-	public static void main(String[] args) throws Exception {
-		appContext = new ClassPathXmlApplicationContext("app-context.xml");
+	@Autowired
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("app-context.xml");//        ser.run();
 	}
 }

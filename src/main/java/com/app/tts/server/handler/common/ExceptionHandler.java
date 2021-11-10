@@ -18,6 +18,7 @@ import io.vertx.rxjava.ext.web.RoutingContext;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+
 /**
  * Created by HungDX on 23-Apr-16.
  */
@@ -40,7 +41,7 @@ public class ExceptionHandler implements Handler<RoutingContext>, LoggerInterfac
                 statusMessage = HttpResponseStatus.INTERNAL_SERVER_ERROR.reasonPhrase();
             }
         } else {
-            logger.error("[ERROR]", throwable);
+//            logger.error("[ERROR]", throwable);
             systemError = new MainObject(500, "");
         }
         Map responseBodyMap = new LinkedHashMap<>();

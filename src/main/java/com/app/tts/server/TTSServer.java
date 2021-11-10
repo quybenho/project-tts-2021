@@ -60,17 +60,23 @@ public class TTSServer implements Runnable, LoggerInterface {
 
             VertxOptions vertxOptions = new VertxOptions();
 
-            vertxOptions.setWorkerPoolSize(workerPoolSize);            
-            vertxOptions.setMaxWorkerExecuteTime(workerMaxExecuteTime);
-            vertxOptions.setEventLoopPoolSize(eventLoopPoolSize);
-            vertxOptions.setMaxEventLoopExecuteTime(eventLoopMaxExecuteTime);
-            vertxOptions.setBlockedThreadCheckInterval(threadCheckInterval);            
-            
-            Vertx.vertx(vertxOptions).deployVerticle(vertxVertical);
+            vertxOptions.setWorkerPoolSize(workerPoolSize);
 
+            //cảnh báo nếu một trình xử lý chuỗi vòng lặp sự kiện
+            vertxOptions.setMaxWorkerExecuteTime(workerMaxExecuteTime);
+
+            vertxOptions.setEventLoopPoolSize(eventLoopPoolSize);
+            //cảnh báo nếu một trình xử lý chuỗi vòng lặp sự kiện
+            vertxOptions.setMaxEventLoopExecuteTime(eventLoopMaxExecuteTime);
+            //kiểm tra các chuỗi bị chặn
+            vertxOptions.setBlockedThreadCheckInterval(threadCheckInterval);
+
+            Vertx.vertx(vertxOptions).deployVerticle(vertxVertical);
+            System.out.println("----------successful-------------");
         } catch (Exception e) {
-            logger.error("", e);
+            e.printStackTrace();
         }
     }
+
 
 }

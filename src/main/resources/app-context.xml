@@ -31,10 +31,10 @@
           p:keySerializer-ref="stringRedisSerializer"
           p:valueSerializer-ref="jdkSerializationRedisSerializer"/>
 
-    <bean id="redisService" class="com.app.tts.services.RedisService">
-        <property name="redisTemplate" ref="redisTemplate"/>
-        <property name="redisDefaultExprireTime" value="${redis.expire.time}"/>
-    </bean>
+    <!--    <bean id="redisService" class="com.app.tts.services.RedisService">-->
+    <!--        <property name="redisTemplate" ref="redisTemplate"/>-->
+    <!--        <property name="redisDefaultExprireTime" value="${redis.expire.time}"/>-->
+    <!--    </bean>-->
     <!-- End Redis Configuration -->
 
     <bean
@@ -120,7 +120,6 @@
                   value="${server.thread.checkinterval}"/>
         <property name="vertxVertical" ref="ttsVertical"/>
     </bean>
-
 
 
 </beans>
